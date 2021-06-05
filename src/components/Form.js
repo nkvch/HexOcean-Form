@@ -121,6 +121,7 @@ let Form = (props) => {
                     step="1"
                     max="5" 
                     placeholder="Hours"
+                    onChange={removeAlerts}
                     validate={required}
                     label="Hours"
                     disabled={!type}></Field>
@@ -133,6 +134,7 @@ let Form = (props) => {
                      step="1"
                      max="59" 
                      placeholder="Minutes"
+                     onChange={removeAlerts}
                      validate={required}
                      label="Minutes"
                      disabled={!type}></Field>
@@ -145,6 +147,7 @@ let Form = (props) => {
                     step="1"
                     max="59" 
                     placeholder="Seconds"
+                    onChange={removeAlerts}
                     validate={required}
                     label="Seconds"
                     disabled={!type}></Field>
@@ -160,6 +163,7 @@ let Form = (props) => {
                         step="1" 
                         max="12" 
                         placeholder="# Of Slices"
+                        onChange={removeAlerts}
                         validate={required}
                         label="# of Slices"></Field>
                     </div>
@@ -172,6 +176,7 @@ let Form = (props) => {
                         min="26.0" 
                         max="45.0" 
                         placeholder="Diameter"
+                        onChange={removeAlerts}
                         validate={required}
                         label="Diameter"></Field>
                     </div>
@@ -184,7 +189,8 @@ let Form = (props) => {
                     component={renderRangeField}
                     type="range"
                     min="1" 
-                    max="10" 
+                    max="10"
+                    onChange={removeAlerts} 
                     placeholder="Spiciness"
                     label="Spiciness"></Field>
                 </div>
@@ -200,6 +206,7 @@ let Form = (props) => {
                         step="1"
                         max="3" 
                         placeholder="Slices of bread"
+                        onChange={removeAlerts}
                         validate={required}
                         label="# Slices of bread"></Field>
                     </div>
@@ -211,7 +218,7 @@ let Form = (props) => {
                     <button type="submit" className="btn btn-primary" disabled={submitting }>Submit</button>
                 </div>
                 <div className="col-6 d-flex justify-content-start">
-                    <button type="button" className="btn btn-outline-danger" onClick={reset}>Clear data</button>
+                    <button type="button" className="btn btn-outline-danger" onClick={() => {reset(); removeAlerts()}}>Clear data</button>
                 </div>
             </div>
         </form>
