@@ -81,7 +81,7 @@ let Form = (props) => {
            pristine } = props;
     return (
         <form onSubmit={handleSubmit}>
-            <h2>Your dish</h2>
+            <h2 className="mb-4">Your dish</h2>
             <div className="row">
                 <div className="col-sm-8 mb-3">
                     <Field name="name" 
@@ -215,7 +215,7 @@ let Form = (props) => {
             }
             <div className="row">
                 <div className="col-6 d-flex justify-content-end">
-                    <button type="submit" className="btn btn-primary" disabled={submitting }>Submit</button>
+                    <button type="submit" className="btn btn-success" disabled={submitting }>Submit</button>
                 </div>
                 <div className="col-6 d-flex justify-content-start">
                     <button type="button" className="btn btn-outline-danger" onClick={() => {reset(); removeAlerts()}}>Clear data</button>
